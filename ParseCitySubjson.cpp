@@ -24,40 +24,40 @@ public:
 private:
 
     struct ParseCitySubjsonStruct {
-        vector<City>& cities;
-        const Json& json;
-        const string& country_name;
-        const string& country_iso_code;
-        const string& country_phone_code;
-        const string& country_time_zone;
+        vector<City>* cities;
+        const Json* json;
+        const string* country_name;
+        const string* country_iso_code;
+        const string* country_phone_code;
+        const string* country_time_zone;
         const vector<Language>& languages;
 
         ParseCitySubjsonStruct& SetCities(vector<City>& cities) {
-            this->cities = cities;
+            this->cities = &cities;
             return *this;
         }
         ParseCitySubjsonStruct& SetJson(const Json& json) {
-            this->json = json;
+            this->json = &json;
             return *this;
         }
         ParseCitySubjsonStruct& SetCountryName(const string& country_name) {
-            this->country_name = country_name;
+            this->country_name = &country_name;
             return *this;
         }
         ParseCitySubjsonStruct& SetCountryIsoCode(const string& country_iso_code) {
-            this->country_iso_code = country_iso_code;
+            this->country_iso_code = &country_iso_code;
             return *this;
         }
         ParseCitySubjsonStruct& SetCountryPhoneCode(const string& country_phone_code) {
-            this->country_phone_code = country_phone_code;
+            this->country_phone_code = &country_phone_code;
             return *this;
         }
         ParseCitySubjsonStruct& SetCountryTimeZone(const string& country_time_zone) {
-            this->country_time_zone = country_time_zone;
+            this->country_time_zone = &country_time_zone;
             return *this;
         }
         ParseCitySubjsonStruct& SetLanguages(const vector<Language>& languages) {
-            this->languages = languages;
+            this->languages = &languages;
             return *this;
         }
     };

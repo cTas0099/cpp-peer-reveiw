@@ -1,7 +1,7 @@
 struct LoadPersonStruct {
     int db_connection_timeout;
     bool db_allow_exceptions;
-    DBLogLevel& db_log_level;
+    DBLogLevel* db_log_level;
     int min_age;
     int max_age;
 
@@ -16,7 +16,7 @@ struct LoadPersonStruct {
     }
 
     LoadPersonStruct& SetDbLogLevel(DBLogLevel& db_log_level) {
-        this->db_log_level = db_log_level;
+        this->db_log_level = &db_log_level;
         return *this;
     }
 
