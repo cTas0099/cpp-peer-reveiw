@@ -30,7 +30,7 @@ private:
         const string* country_iso_code;
         const string* country_phone_code;
         const string* country_time_zone;
-        const vector<Language>& languages;
+        const vector<Language>* languages;
 
         ParseCitySubjsonStruct& SetCities(vector<City>& cities) {
             this->cities = &cities;
